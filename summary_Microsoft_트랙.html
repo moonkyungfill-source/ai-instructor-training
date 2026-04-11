@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수업 요약 — Microsoft 트랙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Noto Sans KR',sans-serif; background:#f5f7fa; color:#1a1a1a; }
+  .page { max-width:1100px; margin:0 auto; padding:24px; }
+  .header { background:linear-gradient(135deg,#1a3a6b 0%,#2B579A 50%,#3b6fb6 100%); color:#fff; border-radius:16px; padding:28px 32px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; }
+  .header h1 { font-size:22px; font-weight:900; line-height:1.3; }
+  .header .sub { font-size:13px; opacity:0.9; margin-top:4px; }
+  .header .badge { background:rgba(255,255,255,0.2); border-radius:8px; padding:12px 18px; text-align:center; }
+  .header .badge .num { font-size:28px; font-weight:900; }
+  .header .badge .label { font-size:11px; opacity:0.8; }
+  .tools { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; }
+  .tools span { background:rgba(255,255,255,0.2); padding:4px 10px; border-radius:20px; font-size:11px; }
+  .timeline { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
+  .card { background:#fff; border-radius:12px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #2B579A; position:relative; }
+  .card .session { font-size:11px; color:#2B579A; font-weight:700; margin-bottom:4px; }
+  .card h3 { font-size:14px; font-weight:700; margin-bottom:8px; line-height:1.4; }
+  .card .success { background:#e3f2fd; border-radius:6px; padding:6px 10px; font-size:11px; color:#1565c0; margin-bottom:8px; }
+  .card .success::before { content:'⚡ '; }
+  .card .tool { font-size:11px; color:#666; }
+  .card .tool strong { color:#2B579A; }
+  .card .output { font-size:11px; color:#444; margin-top:8px; padding-top:8px; border-top:1px dashed #e0e0e0; }
+  .card .output::before { content:'📦 '; }
+  .card .security { position:absolute; top:12px; right:12px; font-size:16px; }
+  .sec-bar { background:#fff; border-radius:12px; padding:16px 20px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06); display:flex; align-items:center; gap:16px; }
+  .sec-bar .icon { font-size:24px; }
+  .sec-bar .text { font-size:12px; color:#555; line-height:1.5; }
+  .sec-bar .text strong { color:#c62828; }
+  .biz { background:#fff; border-radius:12px; padding:16px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:14px; }
+  .biz h2 { font-size:14px; font-weight:700; margin-bottom:10px; color:#2B579A; }
+  .biz table { width:100%; border-collapse:collapse; font-size:11px; }
+  .biz th { background:#e3f2fd; padding:6px 8px; text-align:left; font-weight:600; }
+  .biz td { padding:6px 8px; border-bottom:1px solid #f0f0f0; }
+  .footer { text-align:center; font-size:10px; color:#999; padding:12px 0; }
+  .steps { display:flex; gap:8px; margin-bottom:14px; }
+  .step { flex:1; background:#fff; border-radius:10px; padding:10px; text-align:center; box-shadow:0 1px 4px rgba(0,0,0,0.05); }
+  .step .num { font-size:18px; font-weight:900; color:#2B579A; }
+  .step .name { font-size:11px; font-weight:600; margin-top:2px; }
+  .step .desc { font-size:10px; color:#666; margin-top:2px; }
+  .drm { background:#fff3e0; border-radius:8px; padding:10px 14px; font-size:11px; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .drm .icon { font-size:20px; }
+  @media print { body { background:#fff; } }
+  @media (max-width:768px) { .timeline { grid-template-columns:1fr; } .header { flex-direction:column; text-align:center; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div>
+    <h1>AI로 쉬워지는 직장인 업무 자동화</h1>
+    <div class="sub">Microsoft 트랙 — GitHub Copilot이 VBA도, PowerShell도, 대시보드도 만들어준다</div>
+    <div class="tools">
+      <span>🤖 GitHub Copilot</span>
+      <span>📊 Excel VBA</span>
+      <span>⚡ PowerShell</span>
+      <span>⏰ 작업 스케줄러</span>
+      <span>☁️ OneDrive</span>
+      <span>💻 Ollama + Solar</span>
+    </div>
+  </div>
+  <div class="badge">
+    <div class="num">24h</div>
+    <div class="label">6회 × 4시간</div>
+    <div class="label" style="margin-top:4px">실습 80%</div>
+  </div>
+</div>
+
+<div class="steps">
+  <div class="step"><div class="num">1</div><div class="name">말하기</div><div class="desc">AI에게 자연어로 설명</div></div>
+  <div class="step"><div class="num">2</div><div class="name">받기</div><div class="desc">AI가 코드/결과 생성</div></div>
+  <div class="step"><div class="num">3</div><div class="name">검증하기</div><div class="desc">⚠️ 보안 체크!</div></div>
+  <div class="step"><div class="num">4</div><div class="name">실행하기</div><div class="desc">붙여넣고 실행</div></div>
+</div>
+
+<div class="sec-bar">
+  <div class="icon">🔒</div>
+  <div class="text">
+    <strong>Copilot Free/Pro = 코드가 학습에 쓰입니다! Business 플랜만 안전.</strong>
+    모든 실습은 <strong>더미 데이터만</strong> 사용. OneDrive 공유 시 "특정 사용자"만 지정.
+  </div>
+</div>
+
+<div class="drm">
+  <div class="icon">🔐</div>
+  <strong>DRM 호환:</strong> VBA + Excel 내부 동작 → 문서보안 DRM 환경에서도 사용 가능!
+</div>
+
+<div class="timeline">
+  <div class="card">
+    <div class="security">🟡</div>
+    <div class="session">1회차 · 공통</div>
+    <h3>AI를 안전하게 쓰는 법</h3>
+    <div class="success">Copilot이 VBA를 10초에 써줬다</div>
+    <div class="tool"><strong>Copilot 웹</strong> (설치 없음)</div>
+    <div class="output">데이터 분류표 + 보안 세팅 + 코드 검증</div>
+  </div>
+
+  <div class="card">
+    <div class="security">🔴</div>
+    <div class="session">2회차 · 트랙별</div>
+    <h3>자금일보 자동화 + Document AI</h3>
+    <div class="success">버튼 하나로 자금일보 완성</div>
+    <div class="tool"><strong>Copilot + VBA</strong> (80% 템플릿)</div>
+    <div class="output">VBA 매크로 + Document AI 파싱</div>
+  </div>
+
+  <div class="card">
+    <div class="security">🟠</div>
+    <div class="session">3회차 · 트랙별</div>
+    <h3>생산일보 + 파일 자동화</h3>
+    <div class="success">매일 아침 자동으로 생성!</div>
+    <div class="tool"><strong>VBA + PowerShell</strong> + 스케줄러</div>
+    <div class="output">자동 생산일보 + 파일 정리</div>
+  </div>
+
+  <div class="card">
+    <div class="security">🟠</div>
+    <div class="session">4회차 · 트랙별</div>
+    <h3>대시보드 만들고 팀에 공유</h3>
+    <div class="success">팀원이 내 대시보드를 봤다</div>
+    <div class="tool"><strong>Copilot + HTML</strong> → OneDrive 공유</div>
+    <div class="output">HTML 대시보드 + OneDrive 팀 공유</div>
+  </div>
+
+  <div class="card">
+    <div class="security">🟢</div>
+    <div class="session">5회차 · 공통</div>
+    <h3>로컬 AI — 인터넷 없이도</h3>
+    <div class="success">인터넷 끊어도 AI가 답한다</div>
+    <div class="tool"><strong>LM Studio</strong> GUI → Ollama</div>
+    <div class="output">Solar vs Gemma 비교 + 로컬 환경</div>
+  </div>
+
+  <div class="card">
+    <div class="security">🔴</div>
+    <div class="session">6회차 · 공통</div>
+    <h3>전부 연결 — 종합 프로젝트</h3>
+    <div class="success">내 업무가 자동화됐다!</div>
+    <div class="tool"><strong>전체 도구</strong> + OneDrive 파이프라인</div>
+    <div class="output">end-to-end 자동화 파이프라인</div>
+  </div>
+</div>
+
+<div class="biz">
+  <h2>📈 부서별 활용 케이스</h2>
+  <table>
+    <tr><th>부서</th><th>AI가 만들어주는 것</th><th>공유</th><th>효과</th></tr>
+    <tr><td>재무팀</td><td>자금일보 VBA + 현황 대시보드</td><td>OneDrive 링크</td><td>1시간→5분</td></tr>
+    <tr><td>생산관리</td><td>생산일보 + 자동 실행</td><td>작업 스케줄러</td><td>수기 제거</td></tr>
+    <tr><td>회계팀</td><td>채권연령표 + 분석 차트</td><td>OneDrive KPI</td><td>2일→2시간</td></tr>
+    <tr><td>총무</td><td>PDF 영수증 파싱 (Document AI)</td><td>Excel 자동 정리</td><td>입력 제거</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  ISMS-P 준수 · DRM 호환 (VBA) · Copilot Business 플랜 권장 ·
+  Upstage Solar LLM + Document AI ·
+  Making AI Beneficial
+</div>
+
+</div>
+</body>
+</html>

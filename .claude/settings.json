@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "Bash",
+      "WebSearch",
+      "WebFetch",
+      "Agent"
+    ],
+    "deny": []
+  },
+  "env": {
+    "PROJECT_TYPE": "ai-instructor-application",
+    "TARGET_COMPANY": "upstage",
+    "TRACK": "track1-instructor",
+    "LANGUAGE": "ko",
+    "EDUCATION_TRACKS": "google,microsoft,claude",
+    "SECURITY_FRAMEWORK": "ISMS-P",
+    "LICENSE_CHECK": "required"
+  }
+}

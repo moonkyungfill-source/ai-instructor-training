@@ -1,0 +1,5 @@
+.playwright-cli/
+.claude/settings.local.json
+__pycache__/
+*.pyc
+licenses/라이센스_검토_*.md
